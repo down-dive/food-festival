@@ -16,7 +16,12 @@ module.exports = {
       module: {
         rules: [
           {
-            test: /\.jpg$/i
+            test: /\.jpg$/i,
+            use: [
+              {
+                loader: 'file-loader'
+              }
+            ]
           }
         ]
       },
