@@ -16,21 +16,24 @@ module.exports = {
       module: {
         rules: [
           {
-            test: /\.jpg$/i,
+            test: /\.jpg$/,
             use: [
-                {
-                  loader: "file-loader",
-                  options: {
-                    esModule: false,
-                    name (file) {
-                      return "[path][name].[ext]"
-                    },
-                    publicPath: function(url) {
-                      return url.replace("../", "/assets/")
-                    }
-                  }  
+              {
+                loader: 'file-loader',
+                options: {
+                  esModule: false,
+                  name(file) {
+                    return '[path][name].[ext]';
+                  },
+                  publicPath: function(url) {
+                    return url.replace('../', '/assets/');
+                  }
                 }
-              ]
+              },
+              {
+                loader: 'image-webpack-loader'
+              }
+            ]
           }
         ]
       },
