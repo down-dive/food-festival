@@ -9,10 +9,17 @@ module.exports = {
         schedule: "./assets/js/schedule.js",
         tickets: "./assets/js/tickets.js"
       },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.bundle.js'
-  },
+      output: {
+        filename: "[name].bundle.js",
+        path: __dirname + "/dist",
+      },
+      module: {
+        rules: [
+          {
+            test: /\.jpg$/i
+          }
+        ]
+      },
   mode: 'development',
   plugins: [
     new webpack.ProvidePlugin({
