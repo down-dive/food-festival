@@ -24,6 +24,7 @@
     "webpack-cli": "^4.7.0"
   },
   "dependencies": {
+    "bootstrap": "^5.0.1",
     "jquery": "^3.6.0"
   }
 }
