@@ -9,10 +9,13 @@ module.exports = {
     filename: 'main.bundle.js'
   },
   mode: 'development',
-  plugins:[
+  plugins: [
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: "static", // the report outputs to an HTML file in the dist folder
+    })
   ],
 };
